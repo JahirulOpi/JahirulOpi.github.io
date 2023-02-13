@@ -1,0 +1,207 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #FFFFFF;
+    background-image: radial-gradient(#87CEEB 0.5px, transparent 0.5px);
+    background-size: 10px 10px;
+    height: 100%;
+    /*background-image: linear-gradient(#FFFFFF, #87CEEB);  using gradient in background */
+}
+#container{
+    min-height: 100%;
+    margin-bottom: 40px;
+}
+
+#main {
+    overflow: auto;
+    padding-bottom: 100px;
+}
+
+nav>ul {
+    display: flex;
+    width: 100%;
+    padding: 10px 15px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    background-color: #536782;
+}
+
+nav li {
+    list-style: none;
+    margin-right: 20px;
+    padding: 0 10px;
+}
+
+nav li a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+a:hover {
+    color: #87CEEB;
+}
+
+nav>ul>li:hover>ul {
+    display: block;
+    position: absolute;
+
+}
+
+@media screen and (max-width: 600px) {
+    .nav a, .nav input[type=text] {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      margin: 0;
+      padding: 14px;
+    }
+    
+    .nav input[type=text] {
+      border: 1px solid #ccc;  
+    }
+  }
+#footer{
+    background-color: #536782;
+    position: relative;
+    height: 100px;
+    padding: 30px 15px;
+    margin-top: -100px;
+    clear: both;
+}
+
+footer a {
+    color: #FFFFFF;
+}
+footer a:hover{
+    transform: scale(1.5);
+}
+
+.image1 {
+        height: 250px;
+        width: 250px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
+    }
+.image2 {
+        height: 350px;
+        width: 250px;
+    }
+.image3{
+    height: 20px;
+    width: 20px;
+    margin-bottom: -2.5px;
+}
+
+.bookimage{
+    width: 60%;
+    filter: drop-shadow(2px 0px 2px #536782);
+    margin-bottom: -10px;
+}
+@font-face{
+        font-family: titleFont;
+        src:url(beyond_the_mountains.otf); /* importing font */
+    }
+.header1{
+        font-family: titleFont;
+        font-size: 50px;
+        color: #536782;
+        text-align: center;
+    }
+h2{
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+        color: #000000;
+    }
+h3{
+        width: 100%;
+        padding: 10px 15px;
+        margin: 5px 0;
+        font-family: titleFont;
+        box-sizing: border-box;
+        background-color: #536782;
+        color: #FFFFFF;
+        text-align: center;
+
+    }
+h4{
+        font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+        font-size: 14px;
+        color: #536782;
+        margin:1px;
+    }
+h5{
+        font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+        font-size: 12px;
+        font-weight: lighter;
+        color: #536782;
+        margin:1px;
+        margin-bottom: 5px;
+    }
+h6{
+    font-family: titleFont;
+    color: #536782;
+    font-size: 50px;
+    margin: 5px;
+    margin-top: 30px;
+
+}
+p{
+        width: 100%;
+        padding: 10px 15px;
+        margin: 5px 0;
+        box-sizing: border-box;
+        background-color: #FFFFFF;
+        font-family: monospace;
+        text-align: center;
+        color: #000000;
+    }
+p1{
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 8px;
+    color: #FFFFFF;
+    margin-bottom: 0px;
+}
+    *{
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+     .column {
+        margin: 0px;
+        float: left;
+        width: 25%;
+        padding: 3px;
+        height: 450px;
+      }
+
+button {
+        background-color: #536782;
+        border: none;
+        color: #FFFFFF;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        align-content: center;
+        margin: 10px 1.5px;
+        cursor: pointer;
+        border-radius: 16px;
+        font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+        font-weight: lighter;
+        display: inline-block;
+      }
+button:hover {
+        background-color: #87CEEB;
+    }
+
+select{
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-weight: lighter;
+    background-color: #FFFFFF;
+    color: #536782;
+}
