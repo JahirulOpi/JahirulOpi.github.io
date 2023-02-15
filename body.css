@@ -1,4 +1,4 @@
-body{
+body{  /*style of the body*/
     padding: 0;
     margin: 0;
     background-color: #FFFFFF;
@@ -7,17 +7,18 @@ body{
     height: 100%;
     /*background-image: linear-gradient(#FFFFFF, #87CEEB);  using gradient in background */
 }
-#container{
+#container{ /*this is to keep the main part in the whole screen*/
     min-height: 100%;
     margin-bottom: 40px;
 }
 
-#main {
+#main { /*this is to exceed container if there is overflow*/
     overflow: auto;
     padding-bottom: 100px;
+    flex: 1;
 }
 
-nav>ul {
+nav>ul { /*style of the navigation bar*/
     display: flex;
     width: 100%;
     padding: 10px 15px;
@@ -39,7 +40,7 @@ nav li a {
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
-a:hover {
+a:hover { /*this is to give hover effect if the navigation option is pointed*/
     color: #87CEEB;
 }
 
@@ -49,37 +50,30 @@ nav>ul>li:hover>ul {
 
 }
 
-@media screen and (max-width: 600px) {
-    .nav a, .nav input[type=text] {
-      float: none;
-      display: block;
-      text-align: left;
-      width: 100%;
-      margin: 0;
-      padding: 14px;
-    }
-    
-    .nav input[type=text] {
-      border: 1px solid #ccc;  
-    }
-  }
-#footer{
-    background-color: #536782;
+#footer{ /*style for the footer*/
+    /*background-color: #536782;
     position: relative;
     height: 100px;
     padding: 30px 15px;
     margin-top: -100px;
-    clear: both;
+    clear: both;*/
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #536782;
+   color: white;
+   text-align: center;
 }
 
 footer a {
     color: #FFFFFF;
 }
-footer a:hover{
+footer a:hover{ /*hovering in footer*/
     transform: scale(1.5);
 }
 
-.image1 {
+.image1 { /*style of image*/
         height: 250px;
         width: 250px;
         display: block;
@@ -101,17 +95,23 @@ footer a:hover{
     width: 60%;
     filter: drop-shadow(2px 0px 2px #536782);
     margin-bottom: -10px;
+    position: relative;
 }
-@font-face{
+picture{ /*keeping the width of the responsive image 100%*/
+    max-width: 100%;
+}
+@font-face{ /*downloaded font*/
         font-family: titleFont;
         src:url(beyond_the_mountains.otf); /* importing font */
     }
-.header1{
+.header1{ /*style of the name of the website*/
         font-family: titleFont;
         font-size: 50px;
         color: #536782;
         text-align: center;
     }
+
+/*style for the texts*/
 h2{
         font-family: 'Courier New', Courier, monospace;
         text-align: center;
@@ -167,20 +167,26 @@ p1{
     color: #FFFFFF;
     margin-bottom: 0px;
 }
+
+
     *{
         box-sizing: border-box;
         text-align: center;
     }
 
+    .row{ /*styling the row to make it responsive*/
+        width:90%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+        grid-gap: 20px;
+    }
      .column {
-        margin: 0px;
-        float: left;
-        width: 25%;
-        padding: 3px;
-        height: 450px;
+        height: auto;
+        width: auto;
+        position: relative;
       }
 
-button {
+button { /*style of the button*/
         background-color: #536782;
         border: none;
         color: #FFFFFF;
@@ -195,13 +201,27 @@ button {
         font-weight: lighter;
         display: inline-block;
       }
-button:hover {
+button:hover { /*hovering the button*/
         background-color: #87CEEB;
     }
 
-select{
+select{ /*style of the selection bar*/
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-weight: lighter;
     background-color: #FFFFFF;
     color: #536782;
+}
+
+td, th { /*style of the table's content*/
+    color: FFFFFF;
+    border: solid;
+    border-width: 1px 0;
+    height: 60px;
+}
+
+table{ /*style of the table*/
+    width: 100%;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;;
+    color: #536782;
+    border-collapse: collapse;
 }
