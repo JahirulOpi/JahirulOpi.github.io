@@ -132,7 +132,7 @@ h4{
         font-family: Futura, "Trebuchet MS", Arial, sans-serif;
         font-size: 14px;
         color: #536782;
-        margin:1px;
+        margin: 1px;
     }
 h5{
         font-family: Futura, "Trebuchet MS", Arial, sans-serif;
@@ -156,9 +156,9 @@ p{
         margin: 5px 0;
         box-sizing: border-box;
         background-color: #FFFFFF;
-        font-family: monospace;
+        font-family: Futura, "Trebuchet MS", Arial, sans-serif;
         text-align: center;
-        color: #000000;
+        color: #536782;
     }
 p1{
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
@@ -168,6 +168,121 @@ p1{
     margin-bottom: 0px;
 }
 
+p3{
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    text-align:left;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+p2{
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    text-align: center;
+    color: #536782;
+}
+p4{
+    width: 1200px;
+    padding: 10px 15px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    text-align: center;
+    color: #536782;
+}
+
+legend{
+    font-family: titleFont;
+    color: #536782;
+    font-size: 50px;
+    margin: 5px;
+    padding: 30px;
+
+}
+
+fieldset{
+    border-collapse: collapse;
+    color: #536782;
+    width: 100%;
+    border: none;
+}
+
+
+
+input[type=text], select {
+    width: 100%;
+    padding: 10px 40px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border-color: #536782;
+    text-align: left;
+  }
+
+input[type=text].half{
+    position: relative;
+    display: inline-block;
+    align-items: center; /* Not necessary but will center the items */
+    flex-direction: row; /* Not necessary but tells that they should be in a row */
+    justify-content: flex-start; /* Will align items to left on larger screens */
+    flex-wrap: wrap;
+    width: 50%;
+    /*width: 50%;
+    padding: 10px 40px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    border-color: #536782;
+    text-align: left; 
+    position: relative;
+    white-space: nowrap;*/
+}
+
+input[type=date], select {
+    width: 100%;
+    padding: 10px 40px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+
+
+
+input[type=time], select {
+    width: 100%;
+    min-width: relative;
+    padding: 10px 40px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+input[type=text], textarea {
+    width: 100%;
+    padding: 10px 40px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type="file"] {
+    position: absolute;
+    z-index: -1;
+    top: 10px;
+    left: 8px;
+    font-size: 17px;
+    color: #b8b8b8;
+  }
 
     *{
         box-sizing: border-box;
@@ -175,10 +290,13 @@ p1{
     }
 
     .row{ /*styling the row to make it responsive*/
-        width:90%;
+        width:97.5%;
+        margin: 20px;
+        text-align: center;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
         grid-gap: 20px;
+        padding: 20 px 20px;
     }
      .column {
         height: auto;
@@ -225,3 +343,119 @@ table{ /*style of the table*/
     color: #536782;
     border-collapse: collapse;
 }
+
+p5{
+
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 16px;
+    color: #536782;
+    margin-bottom: 0px;
+    width: 100%;
+    min-width: relative;
+    padding: 10px 40px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+}
+
+
+
+
+.container {
+    margin: 0;
+    background-color: #FFFFFF;
+    background-image: radial-gradient(#87CEEB 0.5px, transparent 0.5px);
+    background-size: 10px 10px;
+    height: 100%;
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .container .form {
+    margin-top: 30px;
+  }
+  .form .input-box {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .form :where(.input-box input, .select-box) {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+  }
+  .input-box input:focus {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  }
+  .form .column {
+    display: flex;
+    column-gap: 15px;
+  }
+  
+  .address :where(input, .select-box) {
+    margin-top: 15px;
+  }
+  .select-box select {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #707070;
+    font-size: 1rem;
+  }
+
+
+  /*Responsive*/
+  @media screen and (max-width: 500px) {
+    .form .column {
+      flex-wrap: wrap;
+    }
+    .form :where(.gender-option, .gender) {
+      row-gap: 15px;
+    }
+  }
+
+::placeholder{
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    color: #536782;
+}
+
+input[type="file"] {
+    position: absolute;
+    z-index: -1;
+    top: 10px;
+    left: 8px;
+    font-size: 17px;
+    color: #536782;
+  }
+  .button-wrap {
+    position: relative;
+  }
+  .button {
+    width: 100%;
+    display: inline-block;
+    padding: 12px 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;;
+    background-color:#FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    color:#536782;
+  }
