@@ -18,6 +18,8 @@ body{  /*style of the body*/
     flex: 1;
 }
 
+
+
 nav>ul { /*style of the navigation bar*/
     display: flex;
     width: 100%;
@@ -26,6 +28,7 @@ nav>ul { /*style of the navigation bar*/
     box-sizing: border-box;
     background-color: #536782;
 }
+
 
 nav li {
     list-style: none;
@@ -49,6 +52,11 @@ nav>ul>li:hover>ul {
     position: absolute;
 
 }
+
+
+
+
+
 
 #footer{ /*style for the footer*/
     /*background-color: #536782;
@@ -134,6 +142,7 @@ h4{
         color: #536782;
         margin: 1px;
     }
+    
 h5{
         font-family: Futura, "Trebuchet MS", Arial, sans-serif;
         font-size: 12px;
@@ -149,6 +158,12 @@ h6{
     margin: 5px;
     margin-top: 30px;
 
+}
+h7{
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    font-size: 30px;
+    color: #536782;
+    margin: 1px;
 }
 p{
         width: 100%;
@@ -190,6 +205,15 @@ p4{
     color: #536782;
 }
 
+p6{
+    font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+    color: #536782;
+    text-align: left;
+}
+
+.blog{
+    float: left;
+}
 legend{
     font-family: titleFont;
     color: #536782;
@@ -363,8 +387,6 @@ p5{
 }
 
 
-
-
 .container {
     margin: 0;
     background-color: #FFFFFF;
@@ -407,9 +429,6 @@ p5{
     column-gap: 15px;
   }
   
-  .address :where(input, .select-box) {
-    margin-top: 15px;
-  }
   .select-box select {
     height: 100%;
     width: 100%;
@@ -420,15 +439,7 @@ p5{
   }
 
 
-  /*Responsive*/
-  @media screen and (max-width: 500px) {
-    .form .column {
-      flex-wrap: wrap;
-    }
-    .form :where(.gender-option, .gender) {
-      row-gap: 15px;
-    }
-  }
+
 
 ::placeholder{
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
@@ -458,4 +469,24 @@ input[type="file"] {
     font-size: 16px;
     font-weight: bold;
     color:#536782;
+  }
+
+  video {
+    margin: 25px;
+    width: 95%;
+    height: relative;
+    border-radius: 12px;
+  }
+
+  .state{
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 28px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
   }
