@@ -2,69 +2,205 @@ body{  /*style of the body*/
     padding: 0;
     margin: 0;
     background-color: #FFFFFF;
-    background-image: radial-gradient(#87CEEB 0.5px, transparent 0.5px);
-    background-size: 10px 10px;
+    background-image: url(dot-2.png); /*image in background*/
+    background-size: 7px 7px; /*size of the BG image*/
+    opacity: 20px;
+    z-index: 0; /*sending back*/
     height: 100%;
-    /*background-image: linear-gradient(#FFFFFF, #87CEEB);  using gradient in background */
+    
 }
+
+img.wrap { /*this is to make float with image*/
+    float: left;
+    height: 300px;
+    -webkit-shape-outside: url(Nobel_Prize.png); /*this makes the shape of the given image */
+    shape-outside: url(Nobel_Prize.png); 
+}
+img.wrap2 { /*this is to make float with image 2*/
+    float: left;
+    height: 300px;
+    -webkit-shape-outside: url(booker.png); /*this makes the shape of the given image */
+    shape-outside: url(booker.png); 
+}
+img.wrap3 { /*this is to make float with image 2*/
+    float: left;
+    height: 300px;
+    -webkit-shape-outside: url(800px-Pulitzer_Medal_-_obverse.png); /*this makes the shape of the given image */
+    shape-outside: url(800px-Pulitzer_Medal_-_obverse.png); 
+}
+
 #container{ /*this is to keep the main part in the whole screen*/
     min-height: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 40px; /*margin*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 0;
 }
 
 #main { /*this is to exceed container if there is overflow*/
     overflow: auto;
     padding-bottom: 100px;
     flex: 1;
+    z-index: 0;
 }
 
+/*
+_________________NAVIGATION BAR RESPONSIVE______________
 
-
-nav>ul { /*style of the navigation bar*/
-    display: flex;
-    width: 100%;
-    padding: 10px 15px;
-    margin: 5px 0;
+*/
+*{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    background-color: #536782;
-}
-
-
-nav li {
-    list-style: none;
-    margin-right: 20px;
-    padding: 0 10px;
-}
-
-nav li a {
-    text-decoration: none;
-    color: #FFFFFF;
-    font-size: 20px;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
 }
 
-a:hover { /*this is to give hover effect if the navigation option is pointed*/
-    color: #87CEEB;
+nav{ /*style for navigation bar*/
+    height: 60px;
+    padding: 0px 40px 0px 40px;
+    background: #536782;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    align-items: centers;
+    z-index: 9;
+
 }
 
-nav>ul>li:hover>ul {
+nav ul{
+    display: flex;
+    list-style: none;
+    align-items: center; /* vertical alignment */
+    justify-content: center; /* horizontal alignment */
+}
+nav ul li{
+    margin: 0.5px;
+    
+}
+
+nav ul li a{
+    margin-top: 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 12px 15px;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center; /* vertical alignment */
+    justify-content: center; /* horizontal alignment */
+}
+
+nav ul li a.hover{
+    color: FFFFFF;
+    background: #000000;
+}
+#bars{ /*bar will be hidden in pc format*/
+    display: none;
+}
+nav .menuhide i{ /*checkbox will be hidden*/
+    display: none;
+    }
+
+.openname{
+    font-size: 10px;
+    font-family: Futura;
+    color: #FFFFFF;
+    padding: 5px;
+
+}
+  
+
+@media (max-width: 1000px){ /*this is the style for navigation bar while using phone or tablet*/
+
+    nav{
+        z-index: 9;
+    }
+    nav ul{
+        display: block;
+        top: 50px;
+        left: -100%;
+        background: #536782;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        text-align: center;
+        transition: all 0.2s ease;
+        z-index: 9;
+    }
+
+    #bars:checked ~ ul {
+        left: 0;
+    }
+    #bars:checked ~ element {
+        display: none;
+    }
+    #bars:checked ~ .selector {
+        display: none;
+    }
+    nav ul li{
+        margin: 40px 0;
+
+    }
+    nav ul li a {
+        font-size: 20px;
+        display: block;
+    }
+    nav ul li a.hover{
+        color:#536782;
+        background: #FFFFFF;
+    }
+    nav .menuhide i{
+        color: #FFFFFF;
+        font-size: 22px;
+        cursor: pointer;
+        display: block;
+    }
+    nav .menuhide i{
+        display: block;
+    }
+
+    #bars:checked ~ .menuhide i:before{
+    content: "\f00d"; /*cross bar*/
+    }
+
+
+
+
+}
+
+.image3{/*image style*/
+    height: 20px;
+    width: 20px;
+    margin-bottom: -2.5px; /*margin*/
+}
+
+.othersite{ /*external links style*/
+    height: 50px;
+    width: auto;
+    margin-bottom: -2.5px; /*margin*/
+}
+.submenu{
+    display: none;
+}
+
+nav ul li:hover .submenu{
     display: block;
     position: absolute;
-
+    background: #536782;
+    margin-top: 15px;
+    margin-left: 15px;
 }
 
-
-
-
+nav ul li:hover .submenu ul{
+    display: block;
+}
 
 
 #footer{ /*style for the footer*/
-    /*background-color: #536782;
-    position: relative;
-    height: 100px;
-    padding: 30px 15px;
-    margin-top: -100px;
-    clear: both;*/
    position: fixed;
    left: 0;
    bottom: 0;
@@ -85,9 +221,9 @@ footer a:hover{ /*hovering in footer*/
         height: 250px;
         width: 250px;
         display: block;
-        margin-left: auto;
-        margin-right: auto;
-        
+        margin-left: auto; /*margin*/
+        margin-right: auto; /*margin*/
+        margin-top: 50px;
     }
 .image2 {
         height: 350px;
@@ -96,17 +232,18 @@ footer a:hover{ /*hovering in footer*/
 .image3{
     height: 20px;
     width: 20px;
-    margin-bottom: -2.5px;
+    margin-bottom: -2.5px; /*margin*/
 }
 
 .bookimage{
     width: 60%;
     filter: drop-shadow(2px 0px 2px #536782);
-    margin-bottom: -10px;
+    margin-bottom: -10px; /*margin*/
     position: relative;
+    z-index: 0;
 }
 picture{ /*keeping the width of the responsive image 100%*/
-    max-width: 100%;
+    width: 100%;
 }
 @font-face{ /*downloaded font*/
         font-family: titleFont;
@@ -127,17 +264,29 @@ h2{
     }
 h3{
         width: 100%;
-        padding: 10px 15px;
+        padding: 10px 15px; /*padding*/
         margin: 5px 0;
         font-family: titleFont;
         box-sizing: border-box;
         background-color: #536782;
         color: #FFFFFF;
         text-align: center;
+    }
+h3w{
+        font-family: titleFont;
+        color: #FFFFFF;
+        font-size: 18px;
+        margin: 10px;
 
     }
+    h4w{
+        font-family: titleFont;
+        color: #536782;
+        font-size: 18px;
+        margin: 10px;
+    }
 h4{
-        font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+        font-family: Futura, "Trebuchet MS", Arial, sans-serif; /*font family*/
         font-size: 14px;
         color: #536782;
         margin: 1px;
@@ -154,9 +303,12 @@ h5{
 h6{
     font-family: titleFont;
     color: #536782;
-    font-size: 50px;
+    font-size: 3em;
     margin: 5px;
-    margin-top: 30px;
+ 
+    text-shadow: .03em .03em black;
+    padding: 10px;
+    padding-top: 100px;
 
 }
 h7{
@@ -167,7 +319,7 @@ h7{
 }
 p{
         width: 100%;
-        padding: 10px 15px;
+        padding: 10px 15px; /*padding*/
         margin: 5px 0;
         box-sizing: border-box;
         background-color: #FFFFFF;
@@ -176,6 +328,7 @@ p{
         color: #536782;
     }
 p1{
+    line-height: 2em;
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-weight: lighter;
     font-size: 8px;
@@ -192,11 +345,11 @@ p3{
 p2{
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     text-align: center;
-    color: #536782;
+    color: #FFFFFF;
 }
 p4{
     width: 1200px;
-    padding: 10px 15px;
+    padding: 10px 15px; /*padding*/
     margin: 5px 0;
     box-sizing: border-box;
     background-color: #FFFFFF;
@@ -211,10 +364,10 @@ p6{
     text-align: left;
 }
 
-.blog{
+.blog{ /*floating*/
     float: left;
 }
-legend{
+legend{/*legend of the form*/
     font-family: titleFont;
     color: #536782;
     font-size: 50px;
@@ -223,7 +376,7 @@ legend{
 
 }
 
-fieldset{
+fieldset{ /*style for the css*/
     border-collapse: collapse;
     color: #536782;
     width: 100%;
@@ -232,7 +385,7 @@ fieldset{
 
 
 
-input[type=text], select {
+input[type=text], select { /*style for the text input */
     width: 100%;
     padding: 10px 40px;
     margin: 8px 0;
@@ -247,25 +400,15 @@ input[type=text], select {
 input[type=text].half{
     position: relative;
     display: inline-block;
-    align-items: center; /* Not necessary but will center the items */
-    flex-direction: row; /* Not necessary but tells that they should be in a row */
-    justify-content: flex-start; /* Will align items to left on larger screens */
+    align-items: center; /* center the items */
+    flex-direction: row; /* row */
+    justify-content: flex-start; /* align items to left on larger screens */
     flex-wrap: wrap;
     width: 50%;
-    /*width: 50%;
-    padding: 10px 40px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    border-color: #536782;
-    text-align: left; 
-    position: relative;
-    white-space: nowrap;*/
+    z-index: 0;
 }
 
-input[type=date], select {
+input[type=date], select {  /*style for the date input*/
     width: 100%;
     padding: 10px 40px;
     margin: 8px 0;
@@ -278,7 +421,7 @@ input[type=date], select {
 
 
 
-input[type=time], select {
+input[type=time], select { /*style for the select input */
     width: 100%;
     min-width: relative;
     padding: 10px 40px;
@@ -289,7 +432,7 @@ input[type=time], select {
     box-sizing: border-box;
   }
 
-input[type=text], textarea {
+input[type=text], textarea { /*style for the textarea*/
     width: 100%;
     padding: 10px 40px;
     margin: 8px 0;
@@ -299,7 +442,7 @@ input[type=text], textarea {
     box-sizing: border-box;
   }
 
-  input[type="file"] {
+  input[type="file"] { /*style for the file upload */
     position: absolute;
     z-index: -1;
     top: 10px;
@@ -308,7 +451,7 @@ input[type=text], textarea {
     color: #b8b8b8;
   }
 
-    *{
+    *{ /*reset */
         box-sizing: border-box;
         text-align: center;
     }
@@ -317,16 +460,25 @@ input[type=text], textarea {
         width:97.5%;
         margin: 20px;
         text-align: center;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-        grid-gap: 20px;
+        display: flex;
+        flex-wrap: wrap; /*responsive using flex*/
+        /*grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+        grid-gap: 20px;*/
         padding: 20 px 20px;
+        justify-content:center;
+        z-index: 0;
     }
      .column {
-        height: auto;
-        width: auto;
+        transition: all 0.2s ease;
+        width: 400px;
         position: relative;
+        margin: 10px;
+        z-index: 0;
       }
+.column2{
+    display: flex;
+    gap: 15px;
+}
 
 button { /*style of the button*/
         background-color: #536782;
@@ -352,13 +504,15 @@ select{ /*style of the selection bar*/
     font-weight: lighter;
     background-color: #FFFFFF;
     color: #536782;
+    
 }
 
 td, th { /*style of the table's content*/
     color: FFFFFF;
     border: solid;
-    border-width: 1px 0;
+    
     height: 60px;
+    
 }
 
 table{ /*style of the table*/
@@ -368,7 +522,7 @@ table{ /*style of the table*/
     border-collapse: collapse;
 }
 
-p5{
+p5{ /*style for the text used for radio and checkbox*/
 
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     font-weight: lighter;
@@ -387,7 +541,7 @@ p5{
 }
 
 
-.container {
+.container { /*container for the form*/
     margin: 0;
     background-color: #FFFFFF;
     background-image: radial-gradient(#87CEEB 0.5px, transparent 0.5px);
@@ -404,7 +558,7 @@ p5{
   .container .form {
     margin-top: 30px;
   }
-  .form .input-box {
+  .form .input-box { /*style for the input box class*/
     width: 100%;
     margin-top: 20px;
   }
@@ -424,12 +578,12 @@ p5{
   .input-box input:focus {
     box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
   }
-  .form .column {
+  .form .column { /*style for the column class in form*/
     display: flex;
     column-gap: 15px;
   }
   
-  .select-box select {
+  .select-box select { /*style for the select box */
     height: 100%;
     width: 100%;
     outline: none;
@@ -439,14 +593,12 @@ p5{
   }
 
 
-
-
-::placeholder{
+::placeholder{ /*style for the placeholder*/
     font-family: Futura, "Trebuchet MS", Arial, sans-serif;
     color: #536782;
 }
 
-input[type="file"] {
+input[type="file"] { /*style for the file upload */
     position: absolute;
     z-index: -1;
     top: 10px;
@@ -454,10 +606,10 @@ input[type="file"] {
     font-size: 17px;
     color: #536782;
   }
-  .button-wrap {
+  .button-wrap { /*wraping the buttom */
     position: relative;
   }
-  .button {
+  .button { /*style for the button */
     width: 100%;
     display: inline-block;
     padding: 12px 18px;
@@ -471,14 +623,16 @@ input[type="file"] {
     color:#536782;
   }
 
-  video {
+  video { /*style for the video*/
+
     margin: 25px;
     width: 95%;
     height: relative;
     border-radius: 12px;
+    border: 3px solid #536782;
   }
 
-  .state{
+  .state{/*style for the state*/
     position: relative;
     height: 50px;
     width: 100%;
@@ -490,3 +644,125 @@ input[type="file"] {
     border-radius: 6px;
     padding: 0 15px;
   }
+
+  .box {
+    border-radius: 30px;
+    background-color: #536782;
+    width: 95%;
+    justify-items: center;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 20px; /* padding to create space between border and contents */
+    display: flex; /* make contents display in a row */
+    align-items: center; /* center contents vertically */
+    gap: 20px; /* gap between image and text */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  .carousel-control-next-icon, .carousel-control-prev-icon {/*customizing bootstrap*/
+
+    border-radius: 5px;
+}
+
+.carousel-control-prev:hover {/*customizing bootstrap*/
+    background-color: none !important;
+}
+
+.carousel-control-prev-icon {/*customizing bootstrap*/
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%536782' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+   }
+   
+.carousel-control-next-icon {/*customizing bootstrap*/
+     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%536782' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+   }
+
+   .carousel-control-next-icon, .carousel-control-prev-icon {/*customizing bootstrap*/
+    width: 15px;
+    height: 15px;
+    }
+
+.card-img-top{/*customizing bootstrap*/
+    height: 300px;
+    width: auto;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.card {/*customizing bootstrap*/
+    background-image: linear-gradient(#536782, #394D63);
+    border-radius: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-primary{/*customizing bootstrap*/
+    margin: 10px;
+    background-color: #87CEEB;
+    color: #FFFFFF;
+}
+
+.btn-primary:hover{/*customizing bootstrap*/
+    background-color: #FFFFFF;
+    color: #536782;
+}
+
+.card-title{/*customizing bootstrap*/
+    font-family: titleFont;
+    color: #FFFFFF;
+    font-size: 27px;
+    margin: 4px;
+}
+.carousel-item{/*customizing bootstrap*/
+    height: 400px;
+} 
+.othersitebutton{/*customizing bootstrap*/
+    background: none;
+} 
+@media (max-width: 360px){/*media querry*/
+    #bookpic{
+        height: auto;
+        width: 100%;
+        padding: 0 !important;
+    }
+}
+
+#carouselExampleAutoplaying{
+    height: 30px;
+    background-color:#87CEEB;
+    position: fixed;
+    width: 100%;
+    z-index: 7;
+}
+.banner{
+    height: 30px;
+}
+.carousel-inner2{
+    height:30px;
+}
+
+.d-flex2{
+    height: 40px;
+}
+
+.btn-outline-success2{
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 40px;
+}
+
+.d-block w-100{
+    width: 100%;
+}
+
+
+.carousel-item2{
+    height: 30px;
+}
+.carousel-item3{
+    height: 300px;
+}
+
+.imageban{/*banner style*/
+    margin-top: 60px;
+    width: 100%;
+    z-index: 8;
+}
+
